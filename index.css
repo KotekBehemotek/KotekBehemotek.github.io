@@ -1,3 +1,7 @@
+* {
+    touch-action: manipulation;
+}
+
 :root {
     --standard-height: 9vh;
     --mobile-height: 4.5vh;
