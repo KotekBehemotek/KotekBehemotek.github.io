@@ -434,9 +434,6 @@ document.addEventListener('DOMContentLoaded', function () {
     elements.buttonStop.addEventListener('click', function () {
         if (gameOn) {
             tetrisOver();
-            if (cookiesSet) {
-                setCookies();
-            }
         } else {
             startGame();
         }
@@ -488,6 +485,10 @@ document.addEventListener('DOMContentLoaded', function () {
         if (gameOn) {
             gameOn = false;
             gamePause = false;
+
+            if (cookiesSet) {
+                setCookies();
+            }
 
             enableCookieButton();
             changeButtonText();
@@ -640,6 +641,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function deleteCookies() {
         removeRecordIndicators();
+        
+        // for Safari
+        document.cookie = 'playername=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/Webtris;';
+        document.cookie = 'recordblocks=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/Webtris;';
+        document.cookie = 'recordrows=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/Webtris;';
+
+        // for Chrome
         document.cookie = 'playername=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
         document.cookie = 'recordblocks=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
         document.cookie = 'recordrows=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
