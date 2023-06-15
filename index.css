@@ -1,0 +1,353 @@
+:root {
+    --standard-height: 9vh;
+    --mobile-height: 4.5vh;
+    --standard-margin: 10px;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-position: center;
+    background-color: black;
+}
+
+#grid {
+    display: grid;
+    min-height: 100vh;
+}
+
+#upperLeftCell {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    display: inline-flex;
+    align-items: center;
+}
+
+#upperRightCell {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+#leftCell {
+    grid-row: 3 / 4;
+}
+
+#rightCell {
+    display: grid;
+}
+
+#matrix {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(20, 1fr);
+    aspect-ratio: 1 / 2;
+    border-width: 2px;
+    border-style: solid;
+    border-color: aquamarine;
+}
+
+#nameBox {
+    background-color: #00000000;
+    border-color: #00000000;
+    width: 100%;
+    color: aquamarine;
+    resize: none;
+    outline: none;
+    text-transform: uppercase;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.tetri {
+    color: aquamarine;
+    text-align: center;
+    opacity: 0;
+    font-size: 2vh;
+    font-weight: bolder;
+}
+
+#cookieButton {
+    color: aquamarine;
+    width: 100%;
+    font-size: 50%;
+    opacity: 0;
+}
+
+#cookieButton:hover {
+    color: black !important;
+    background-color: aquamarine !important;
+}
+
+.counters {
+    background-color: #00000000;
+    border-color: aquamarine;
+    border-style: solid;
+    box-sizing: border-box;
+    border-width: 2px;
+    color: aquamarine;
+    font-size: 50%;
+    display: grid;
+    padding-left: 5%;
+    padding-right: 5%;
+    text-transform: uppercase;
+    font-family: 'Press Start 2P', cursive;
+}
+
+#arrowsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5%;
+}
+
+.arrows {
+    display: block;
+    background-color: #00000000;
+    border-color: aquamarine;
+    color: aquamarine;
+    width: 100%;
+    text-transform: uppercase;
+    font-family: 'Press Start 2P', cursive;
+    opacity: 0;
+}
+
+.arrows:hover {
+    background-color: aquamarine !important;
+    color: black !important;
+}
+
+#arrowUp {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    margin-top: fill;
+}
+
+#arrowLeft {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    writing-mode: vertical-rl;
+}
+
+#arrowDown {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+}
+
+#arrowRight {
+    grid-row: 2 / 3;
+    grid-column: 3 / 4;
+    writing-mode: vertical-lr;
+}
+
+#blocksCounter {
+    grid-column: 1 / 2;
+}
+
+#blocksNumber {
+    grid-row: 1 / 2;
+    margin-left: auto;
+}
+
+#rowsCounter {
+    grid-column: 1 / 2;
+}
+
+#rowsText {
+    grid-row: 1 / 2;
+}
+
+#blocksText {
+    grid-row: 1 / 2;
+}
+
+#rowsNumber {
+    grid-row: 1 / 2;
+    margin-left: auto;
+}
+
+.recordText {
+    grid-row: 2 / 3;
+    display: none;
+}
+
+button {
+    display: block;
+    background-color: #00000000;
+    border-color: aquamarine;
+    text-transform: uppercase;
+    font-family: 'Press Start 2P', cursive;
+}
+
+button:hover {
+    border-color: gray !important;
+}
+
+#buttonPause {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    color: aquamarine;
+    opacity: 0;
+}
+
+#buttonPause:hover {
+    color: black !important;
+    background-color: aquamarine !important;
+}
+
+#buttonStop {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    color: red;
+}
+
+#buttonStop:hover {
+    color: black !important;
+    background-color: red !important;
+}
+
+.verticallyAligned {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.recordNumber {
+    grid-row: 2 / 3;
+    display: none;
+    margin-left: auto;
+}
+
+@media only screen and (max-aspect-ratio: 1 / 1) {
+
+    #grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 0.1fr 0.2fr 2.0fr 0.2fr 0.1fr;
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+
+    #upperLeftCell {
+        height: var(--mobile-height);
+    }
+
+    #leftCell {
+        grid-column: 1 / 3;
+    }
+
+    #rightCell {
+        grid-column: 1 / 3;
+        grid-row: 4 / 5;
+        grid-column-gap: 5%;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: calc(4.5vh + 10px) calc(4.5vh + 10px) calc(4.5vh + 10px) var(--mobile-height);
+    }
+
+    #matrix {
+        height: 61vh;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    #nameBox {
+        height: 2.5vw;
+        font-size: 2.5vw;
+    }
+
+    .counters {
+        height: var(--mobile-height);
+    }
+
+    #arrowsGrid {
+        grid-template-rows: repeat(2, 1fr);
+        grid-column: 2 / 3;
+        grid-row: 1 / 5;
+        min-height: 100%;
+    }
+
+    .arrows {
+        height: 100%;
+        margin: 0;
+    }
+
+    #blocksCounter {
+        grid-row: 3 / 4;
+    }
+
+    #rowsCounter {
+        grid-row: 4 / 5;
+    }
+
+    button {
+        height: var(--mobile-height);
+    }
+
+}
+
+@media only screen and (min-aspect-ratio: 1 / 1) {
+
+    #grid {
+        grid-template-columns: 1.2fr 0.8fr;
+        grid-template-rows: 0.2fr 0.4fr 2.2fr 0.2fr;
+    }
+
+    #upperLeftCell {
+        padding-left: 14%;
+        padding-right: 14%;
+        height: var(--standard-height);
+    }
+
+    #upperRightCell {
+        padding-right: 26%;
+    }
+
+    #leftCell {
+        grid-column: 1 / 2;
+        padding-left: 14%;
+    }
+
+    #rightCell {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+        padding-right: 26%;
+        grid-template-rows: min-content min-content auto min-content min-content min-content;
+    }
+
+    #matrix {
+        height: 72.5vh;
+        aspect-ratio: 1 / 2;
+    }
+
+    #nameBox {
+        height:  2.3vw;
+        font-size:  2.3vw;
+    }
+
+    .counters {
+        height: var(--standard-height);
+    }
+
+    #arrowsGrid {
+        min-height:  calc(9vh * 2 + 5px);
+        grid-template-rows: repeat(2, var(--standard-height));
+        grid-row: 4 / 5;
+        grid-column: 1 / 2;
+        margin-bottom: var(--standard-margin);
+    }
+
+    .arrows {
+        height: var(--standard-height);
+    }
+
+    #blocksCounter {
+        grid-row: 5 / 6;
+    }
+
+    #rowsCounter {
+        grid-row: 6 / 7;
+        margin-top: var(--standard-margin);
+    }
+
+    button {
+        height: var(--standard-height);
+        margin-bottom: var(--standard-margin);
+    }
+
+}
