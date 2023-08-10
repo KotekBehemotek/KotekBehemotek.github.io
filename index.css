@@ -141,6 +141,11 @@ body {
     writing-mode: vertical-lr;
 }
 
+.arrowsText {
+    display: inline-block;
+    transform: rotate(90deg);
+}
+
 #blocksCounter {
     grid-column: 1 / 2;
 }
