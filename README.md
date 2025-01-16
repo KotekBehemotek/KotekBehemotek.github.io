@@ -2,7 +2,7 @@ Tetris engine js module.
 
 Module allows users to effortlessly implement Tetris game (both mechanics and adjustable graphics) in their website.
 
-The main object <Game> (which is supposed to be imported from the engine module) offers two most important methods:
+The main object <Game> (which is supposed to be imported from the engine module) offers two most important methods:<br>
 .addMatrixDefault(<br>
 shapesInLine, - defines number of Tetris blocks randomised in advance
 speed, - interval between game steps (in miliseconds)
