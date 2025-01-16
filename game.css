@@ -1,0 +1,100 @@
+:root {
+    --standard-color: aquamarine;
+    --standard-accent-color: red;
+    --standard-background-color: black;
+    --standard-border: var(--standard-color), 2px, solid;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    height: 100dvh;
+    width: 100dvw;
+}
+
+body {
+    margin: 3dvh 3dvw;
+    padding: 0;
+    background-color: black;
+    /*because of margin. CSS thinks 93 is noticeably less than 100 - 2 * 3 that's why calc()*/
+    height: calc(100dvh - 2 * 3dvh);
+    width: calc(100dvw - 2 * 3dvw);
+}
+
+.grid {
+    display: grid;
+    height: 100%;
+    width: 100%;
+}
+
+.flex {
+    display: flex;
+}
+
+#mainFlex {
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+}
+
+#scoreFlex {
+    flex-direction: column;
+    height: calc(100% - 4px);
+    width: calc(100% / 3.5 - 5%);
+    text-transform: uppercase;
+    font-family: 'Press Start 2P', cursive;
+    color: var(--standard-color);
+    border: var(--standard-border);
+}
+
+.scoreSection {
+    padding: 10%;
+}
+
+.scoreSectionBright {
+    background-color: var(--standard-color);
+    color: var(--standard-background-color);
+}
+
+.rowsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+#matrix_0 {
+    height: calc(100% - 4px) !important;
+}
+
+#matrix_1 {
+    grid-column: 2 / 3;
+    border: var(--standard-border);
+    height: calc(100% - 4px);
+    aspect-ratio: 10 / 20;
+    display: grid;
+    grid-template-rows: repeat(20, 1fr);
+    grid-template-columns: repeat(10, 1fr);
+}
+
+.pixelALL_1 {
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    background-color: var(--standard-background-color);
+    font-size: 3dvh;
+    letter-spacing: 1dvh;
+    font-weight: bolder;
+    font-stretch: extra-expanded;
+}
+
+.pixelON_1 {
+    color: var(--standard-accent-color) !important;
+}
+
+.pixelOFF_1 {
+    color: var(--standard-background-color);
+}
+
+.pixelDED_1 {
+    color: var(--standard-color);
+}

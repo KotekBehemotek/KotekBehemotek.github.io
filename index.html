@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Webtris</title>
+
+    <link rel="stylesheet" href="game.css">
+    <script type="module" src="tetrisEngine.js"></script>
+    <script type="module" src="game.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="flex" id="mainFlex">
+    <div class="flex" id="scoreFlex">
+        <div class="grid rowsGrid" id="rowsGrid0">
+            <span class="scoreSection scoreSectionBright">matrix</span>
+            <span class="scoreSection scoreSectionDark">1</span>
+            <span class="scoreSection scoreSectionDark">rows</span>
+            <span class="scoreSection scoreSectionBright" id="score0">0</span>
+        </div>
+        <div class="grid rowsGrid" id="rowsGrid1">
+            <span class="scoreSection scoreSectionBright">matrix</span>
+            <span class="scoreSection scoreSectionDark">2</span>
+            <span class="scoreSection scoreSectionDark">rows</span>
+            <span class="scoreSection scoreSectionBright" id="score1">0</span>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
